@@ -1,0 +1,104 @@
+<template lang="">
+  <div>
+    <h1>Nueva Marca</h1>
+    <form id="miFormulario" action="" @submit.prevent="crearMarca">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" v-model="nombre" />
+        <label for="añoFundacion">Fundacion:</label>
+        <input type="number" id="añoFundacion" v-model="añoFundacion" />
+        <label for="paisCreacion">Creado En:</label>
+        <input type="text" id="paisCreacion" v-model="paisCreacion" />
+      </div>
+      <div>
+        <button type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+
+</template>
+<script>
+export default {
+  data() {
+    return {
+      nombre: "",
+      añoFundacion: 0,
+      paisCreacion: "",
+    };
+  },
+  methods: {
+    crearMarca() {
+      this.$emit("crearMarca", {
+        nombre: this.nombre,
+        pais: this.paisCreacion,
+        añoFundacion: this.añoFundacion,
+      });
+      document.getElementById("miFormulario").reset();
+
+    },
+  },
+};
+</script>
+<style scoped>
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px; 
+  margin: 0 auto; 
+}
+
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333; 
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+}
+
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555; 
+}
+
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+
+button {
+  background-color: red; 
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+button:hover {
+  background-color:  #333;
+  color: #ffffff; 
+}
+
+</style>

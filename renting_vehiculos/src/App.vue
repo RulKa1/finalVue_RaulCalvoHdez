@@ -11,13 +11,13 @@
           </p>
           <ul>
             <li>
-              <router-link to="/marcas/crearMarca">Nueva Marca</router-link>
+              <router-link to="/marcas/crearMarca">Crear Marca</router-link>
             </li>
             <li>
               <router-link to="/marcas/modelos">Modelos</router-link>
             </li>
             <li>
-              <router-link to="/marcas/crearModelo">Nuevo Modelo</router-link>
+              <router-link to="/marcas/crearModelo">Crear Modelo</router-link>
             </li>
           </ul>
         </li>
@@ -27,7 +27,7 @@
           </p>
           <ul>
             <li>
-              <router-link to="/vehiculos/crearvehiculo">Nuevo Vehículo</router-link>
+              <router-link to="/vehiculos/crearvehiculo">Crear Vehículo</router-link>
             </li>
             <li>
               <router-link to="/alquiler">Alquiler</router-link>

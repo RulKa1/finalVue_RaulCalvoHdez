@@ -1,43 +1,59 @@
 {
   "marcas": [
     {
-    "id":1,
-    "nombre":"Alfa Romeo",
-    "origen": "Italia",
-    "anioFundacion": 1910
+      "id": 1,
+      "nombre": "Alfa Romeo",
+      "origen": "Italia",
+      "añoDeFundacion": 1910
+    },
+    {
+      "nombre": "A1",
+      "origen": "Venezuela",
+      "anioFundacion": 1,
+      "id": 2
+    },
+    {
+      "nombre": "Raul",
+      "pais": "2002",
+      "añoFundacion": 0,
+      "id": 3
     }
-    
   ],
   "modelos": [
     {
-      "id":1,
+      "id": 1,
       "idMarca": 1,
       "modelo": "Giulia",
       "extraPorModelo": 12
+    },
+    {
+      "idMarca": 2,
+      "modelo": "A1",
+      "extraPorModelo": 1,
+      "id": 2
     }
-    
   ],
   "vehiculos": [
     {
-    "id":1,
-    "idModelo": 1,
-    "precioDia": 98,
-    "puertas": 4,
-    "sillaInfantil": false
+      "id": 1,
+      "idModelo": 1,
+      "precioDia": 98,
+      "puertas": 4,
+      "sillaInfantil": false
     }
   ],
   "clientes": [
-      {
-        "id":1,
-        "nombre":"Diego Velázquez",
-        "dni": "76523137I",
-        "alquileres":[
-          {
-            "vehiculo":1,
-            "numDias":4,
-            "fechaInic": "12/11/2022"
-          }
-        ]
-      }
+    {
+      "id": 1,
+      "nombre": "Diego Velázquez",
+      "dni": "76523137I",
+      "alquileres": [
+        {
+          "vehiculo": 1,
+          "numDias": 4,
+          "fechaInic": "12/11/2022"
+        }
+      ]
+    }
   ]
 }
