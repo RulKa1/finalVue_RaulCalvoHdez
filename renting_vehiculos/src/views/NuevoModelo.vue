@@ -1,18 +1,18 @@
 <template lang="">
     <div>
-      <FormNewModelo
+      <FormularioNuevoModelo
         :marcas="marcas"
         @nuevoModelo="nuevoModelo"
-      ></FormNewModelo>
+      ></FormularioNuevoModelo>
     </div>
   </template>
   <script>
-  import FormNewModelo from "../components/Formularios/FormularioNuevoModelo.vue";
+  import FormularioNuevoModelo from "../components/Formularios/FormularioNuevoModelo.vue";
   
   export default {
     name: "NuevoModelo",
     components: {
-      FormNewModelo,
+      FormularioNuevoModelo,
     },
     data() {
       return {
