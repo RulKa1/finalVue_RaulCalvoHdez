@@ -1,6 +1,6 @@
 <template lang="">
   <div>
-    <FormularioNuevaMarca @crearMarca="crearMarca" />
+    <FormularioNuevaMarca @nuevaMarca="nuevaMarca" />
   </div>
 </template>
 <script>
@@ -11,7 +11,7 @@ export default {
     FormularioNuevaMarca,
   },
   methods: {
-    crearMarca(marca) {
+    nuevaMarca(marca) {
       let init = {
         method: "POST",
         headers: {

@@ -1,17 +1,17 @@
 <template lang="">
   <div>
     <h1>Nueva Marca</h1>
-    <form id="miFormulario" action="" @submit.prevent="crearMarca">
+    <form id="miFormulario" action="" @submit.prevent="nuevaMarca">
       <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" v-model="nombre" />
-        <label for="añoFundacion">Fundacion:</label>
-        <input type="number" id="añoFundacion" v-model="añoFundacion" />
-        <label for="paisCreacion">Creado En:</label>
-        <input type="text" id="paisCreacion" v-model="paisCreacion" />
+        <label for="nombre">Nombre de la Marca</label>
+        <input type="text" id="nombre" v-model="nombre" required />
+        <label for="añoFundacion">Año de Fundacion</label>
+        <input type="number" id="añoFundacion" v-model="añoFundacion"  required/>
+        <label for="paisCreacion">Creado En </label>
+        <input type="text" id="paisCreacion" v-model="paisCreacion" required/>
       </div>
       <div>
-        <button type="submit">Guardar</button>
+        <button type="submit">Guardar Marca</button>
       </div>
     </form>
   </div>
@@ -23,13 +23,13 @@ export default {
   data() {
     return {
       nombre: "",
-      añoFundacion: 0,
+      añoFundacion: "",
       paisCreacion: "",
     };
   },
   methods: {
-    crearMarca() {
-      this.$emit("crearMarca", {
+    nuevaMarca() {
+      this.$emit("nuevaMarca", {
         nombre: this.nombre,
         pais: this.paisCreacion,
         añoFundacion: this.añoFundacion,
@@ -41,7 +41,15 @@ export default {
 };
 </script>
 <style scoped>
-
+select:invalid {
+  border-color: red; 
+}
+input:valid {
+  border-color: black;
+}
+input:invalid {
+  border-color: red;
+}
 div {
   display: flex;
   flex-direction: column;

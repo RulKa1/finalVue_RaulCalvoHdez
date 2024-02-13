@@ -7,15 +7,15 @@
       "añoDeFundacion": 1910
     },
     {
-      "nombre": "A1",
-      "origen": "Venezuela",
-      "anioFundacion": 1,
+      "nombre": "Ferrari",
+      "pais": "Italia",
+      "añoFundacion": 1939,
       "id": 2
     },
     {
-      "nombre": "Raul",
-      "pais": "2002",
-      "añoFundacion": 0,
+      "nombre": "Audi",
+      "pais": "Alemania",
+      "añoFundacion": 1906,
       "id": 3
     }
   ],
@@ -25,12 +25,6 @@
       "idMarca": 1,
       "modelo": "Giulia",
       "extraPorModelo": 12
-    },
-    {
-      "idMarca": 2,
-      "modelo": "A1",
-      "extraPorModelo": 1,
-      "id": 2
     }
   ],
   "vehiculos": [
