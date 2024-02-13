@@ -41,6 +41,7 @@ export default {
 };
 </script>
 <style scoped>
+
 select:invalid {
   border-color: red; 
 }
@@ -59,14 +60,16 @@ div {
 }
 
 
-h1 {
-  font-size: 2rem;
+h1 {  
+  margin-top: 20%;
+  font-size: 4rem;
   margin-bottom: 20px;
   color: #333; 
 }
 
 
 form {
+  margin-top: 20%;
   display: flex;
   flex-direction: column;
   width: 100%; 

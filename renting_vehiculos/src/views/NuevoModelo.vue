@@ -1,9 +1,6 @@
 <template lang="">
     <div>
-      <FormularioNuevoModelo
-        :marcas="marcas"
-        @nuevoModelo="nuevoModelo"
-      ></FormularioNuevoModelo>
+      <FormularioNuevoModelo :marcas="marcas" @nuevoModelo="nuevoModelo"></FormularioNuevoModelo>
     </div>
   </template>
   <script>
@@ -16,10 +13,11 @@
     },
     data() {
       return {
+        marcas: [],
         marcaSelecionada: "",
         nombre: "",
-        extraPorModelo: "",
-        marcas: [],
+        extraPorModelo: ""
+    
       };
     },
     methods: {

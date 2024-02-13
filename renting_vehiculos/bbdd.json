@@ -25,6 +25,18 @@
       "idMarca": 1,
       "modelo": "Giulia",
       "extraPorModelo": 12
+    },
+    {
+      "idMarca": 2,
+      "modelo": "SF-23",
+      "extraPorModelo": 16,
+      "id": 2
+    },
+    {
+      "idMarca": 2,
+      "modelo": "SF-24",
+      "extraPorModelo": 55,
+      "id": 3
     }
   ],
   "vehiculos": [

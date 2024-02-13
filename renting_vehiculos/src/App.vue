@@ -46,6 +46,10 @@
 <style scoped>
 #app {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
 }
 
 nav {
@@ -60,10 +64,11 @@ nav {
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 nav li {
-  margin: 10px 0;
+  margin: 10px ;
   text-align: center;
   position: relative;
 }
