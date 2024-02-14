@@ -30,7 +30,7 @@
               <router-link to="/vehiculos/nuevoVehiculo">Nuevo Vehículo</router-link>
             </li>
             <li>
-              <router-link to="/alquiler">Alquiler</router-link>
+              <router-link to="/vehiculos/alquiler">Alquiler</router-link>
             </li>
           </ul>
         </li>

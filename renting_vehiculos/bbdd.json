@@ -29,6 +29,18 @@
       "pais": "Inglaterra",
       "añoFundacion": 1913,
       "id": 5
+    },
+    {
+      "nombre": "Mercedes",
+      "pais": "Alemania",
+      "añoFundacion": 1927,
+      "id": 6
+    },
+    {
+      "nombre": "Haas",
+      "pais": "Inglaterra",
+      "añoFundacion": 2016,
+      "id": 7
     }
   ],
   "modelos": [
@@ -67,6 +79,18 @@
       "modelo": "AMR24",
       "extraPorModelo": "",
       "id": 6
+    },
+    {
+      "idMarca": 6,
+      "modelo": "MR-27",
+      "extraPorModelo": 35,
+      "id": 7
+    },
+    {
+      "idMarca": 7,
+      "modelo": "A24",
+      "extraPorModelo": "",
+      "id": 8
     }
   ],
   "vehiculos": [
