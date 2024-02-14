@@ -41,6 +41,18 @@
       "pais": "Inglaterra",
       "añoFundacion": 2016,
       "id": 7
+    },
+    {
+      "nombre": "Red Bull",
+      "pais": "Austria",
+      "añoFundacion": 2004,
+      "id": 8
+    },
+    {
+      "nombre": "Nissan",
+      "pais": "Japon",
+      "añoFundacion": 2000,
+      "id": 9
     }
   ],
   "modelos": [
@@ -91,6 +103,18 @@
       "modelo": "A24",
       "extraPorModelo": "",
       "id": 8
+    },
+    {
+      "idMarca": 8,
+      "modelo": "RB-24",
+      "extraPorModelo": 33,
+      "id": 9
+    },
+    {
+      "idMarca": 9,
+      "modelo": "Qasqui",
+      "extraPorModelo": "",
+      "id": 10
     }
   ],
   "vehiculos": [
