@@ -17,6 +17,18 @@
       "pais": "Alemania",
       "añoFundacion": 1906,
       "id": 3
+    },
+    {
+      "nombre": "Seat",
+      "pais": "España",
+      "añoFundacion": 2000,
+      "id": 4
+    },
+    {
+      "nombre": "Aston Martin",
+      "pais": "Inglaterra",
+      "añoFundacion": 1913,
+      "id": 5
     }
   ],
   "modelos": [
@@ -37,6 +49,24 @@
       "modelo": "SF-24",
       "extraPorModelo": 55,
       "id": 3
+    },
+    {
+      "idMarca": 4,
+      "modelo": "Ibiza",
+      "extraPorModelo": 33.54,
+      "id": 4
+    },
+    {
+      "idMarca": 4,
+      "modelo": "León",
+      "extraPorModelo": "",
+      "id": 5
+    },
+    {
+      "idMarca": 5,
+      "modelo": "AMR24",
+      "extraPorModelo": "",
+      "id": 6
     }
   ],
   "vehiculos": [

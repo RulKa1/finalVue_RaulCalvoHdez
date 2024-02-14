@@ -1,5 +1,6 @@
 <template lang="">
     <div>
+      <h1>Nuevo Modelo</h1>
       <form action="" @submit.prevent="nuevoModelo">
         <label for="marca">Elige Marca</label>
         <select name="" id="select" v-model="nombreMarca" required>
@@ -10,7 +11,7 @@
         <label for="nombre">Nombre del modelo</label>
         <input type="text" placeholder="Introduce el Nombre del Modelo " v-model="nombre"required />
         <label for="extraPorModelo">Extra a pagar por el modelo</label>
-        <input type="number" placeholder="€" v-model="extraPorModelo" required step="0.01" />
+        <input type="number" placeholder="€" v-model="extraPorModelo"  step="0.01" />
         <button type="submit">Guardar Modelo</button>
       </form>
     </div>
@@ -63,54 +64,58 @@ input:invalid {
  }
  
  
- h1 {
-   font-size: 2rem;
-   margin-bottom: 20px;
-   color: #333; 
- }
+ h1 {  
+  margin-top: 20%;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #333; 
+}
+
+
+form {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+}
+
+
+label {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #555; 
+}
+
+
+input {
+
+  border: 1px solid #ccc;
+  margin-bottom: 18px;
+  border-radius: 5px;
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 10px; 
+}
+
+button {
+  background-color: red; 
+  color: #fff; 
+  border: none; 
+  padding: 14px 24px; 
+  text-align: center; 
+  font-size: 1.1rem; 
+  border-radius: 6px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+  text-transform: uppercase; 
+
+
  
- 
- form {
-   display: flex;
-   flex-direction: column;
-   width: 100%; 
- }
- 
- 
- label {
-   font-size: 1.2rem;
-   margin-bottom: 10px;
-   color: #555; 
- }
- 
- 
- input {
-   padding: 10px;
-   border: 1px solid #ccc;
-   border-radius: 4px;
-   margin-bottom: 20px;
-   width: 100%; 
-   box-sizing: border-box; 
- }
- 
- 
- button {
-   background-color: red; 
-   color: black;
-   border: none;
-   padding: 12px 20px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 20px;
-   border-radius: 4px;
-   cursor: pointer;
- 
- }
- 
- button:hover {
-   background-color:  #333;
-   color: #ffffff; 
- }
+}
+button:hover {
+  background-color:  #333;
+  color: #ffffff; 
+}
+
  </style>
   

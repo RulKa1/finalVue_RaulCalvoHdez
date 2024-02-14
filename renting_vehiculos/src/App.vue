@@ -49,9 +49,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
-
 nav {
   background-color: #333;
   width: 200px;
@@ -64,7 +62,6 @@ nav {
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 nav li {

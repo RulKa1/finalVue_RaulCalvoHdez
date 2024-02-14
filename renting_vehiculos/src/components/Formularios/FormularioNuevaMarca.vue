@@ -52,8 +52,8 @@ input:invalid {
   border-color: red;
 }
 div {
-  display: flex;
   flex-direction: column;
+  display: flex;
   align-items: center;
   max-width: 400px; 
   margin: 0 auto; 
@@ -77,36 +77,37 @@ form {
 
 
 label {
-  font-size: 1.2rem;
   margin-bottom: 10px;
+  font-size: 1.2rem;
   color: #555; 
 }
 
 
 input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  width: 100%; 
-  box-sizing: border-box; 
-}
 
+  border: 1px solid #ccc;
+  margin-bottom: 18px;
+  border-radius: 5px;
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 10px; 
+}
 
 button {
   background-color: red; 
-  color: black;
-  border: none;
-  padding: 12px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius: 4px;
+  color: #fff; 
+  border: none; 
+  padding: 14px 24px; 
+  text-align: center; 
+  font-size: 1.1rem; 
+  border-radius: 6px; 
   cursor: pointer;
+  transition: background-color 0.3s ease; 
+  text-transform: uppercase; 
 
+
+ 
 }
-
 button:hover {
   background-color:  #333;
   color: #ffffff; 
