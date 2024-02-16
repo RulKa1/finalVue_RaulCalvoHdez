@@ -29,18 +29,26 @@
     },
     methods: {
       nuevoModelo() {
+        
+        if (!this.extraPorModelo.trim()) {
+          this.extraPorModelo = 0;
+        }
+    
         this.$emit("nuevoModelo", {
-            idMarca: this.nombreMarca,
+          idMarca: this.nombreMarca,
           modelo: this.nombre,
           extraPorModelo: this.extraPorModelo,
         });
+        
+     
         this.nombre = "";
         this.extraPorModelo = "";
         this.nombreMarca = "";
       },
     },
   };
-  </script>
+</script>
+
  <style scoped>
 
 select{

@@ -13,46 +13,10 @@
       "id": 2
     },
     {
-      "nombre": "Audi",
-      "pais": "Alemania",
-      "añoFundacion": 1906,
-      "id": 3
-    },
-    {
-      "nombre": "Seat",
-      "pais": "España",
-      "añoFundacion": 2000,
-      "id": 4
-    },
-    {
-      "nombre": "Aston Martin",
-      "pais": "Inglaterra",
-      "añoFundacion": 1913,
-      "id": 5
-    },
-    {
       "nombre": "Mercedes",
       "pais": "Alemania",
-      "añoFundacion": 1927,
-      "id": 6
-    },
-    {
-      "nombre": "Haas",
-      "pais": "Inglaterra",
-      "añoFundacion": 2016,
-      "id": 7
-    },
-    {
-      "nombre": "Red Bull",
-      "pais": "Austria",
-      "añoFundacion": 2004,
-      "id": 8
-    },
-    {
-      "nombre": "Nissan",
-      "pais": "Japon",
-      "añoFundacion": 2000,
-      "id": 9
+      "añoFundacion": 1916,
+      "id": 3
     }
   ],
   "modelos": [
@@ -64,57 +28,15 @@
     },
     {
       "idMarca": 2,
-      "modelo": "SF-23",
-      "extraPorModelo": 16,
+      "modelo": "SF-24",
+      "extraPorModelo": 0,
       "id": 2
     },
     {
-      "idMarca": 2,
-      "modelo": "SF-24",
-      "extraPorModelo": 55,
+      "idMarca": 3,
+      "modelo": "MR-24",
+      "extraPorModelo": 0,
       "id": 3
-    },
-    {
-      "idMarca": 4,
-      "modelo": "Ibiza",
-      "extraPorModelo": 33.54,
-      "id": 4
-    },
-    {
-      "idMarca": 4,
-      "modelo": "León",
-      "extraPorModelo": "",
-      "id": 5
-    },
-    {
-      "idMarca": 5,
-      "modelo": "AMR24",
-      "extraPorModelo": "",
-      "id": 6
-    },
-    {
-      "idMarca": 6,
-      "modelo": "MR-27",
-      "extraPorModelo": 35,
-      "id": 7
-    },
-    {
-      "idMarca": 7,
-      "modelo": "A24",
-      "extraPorModelo": "",
-      "id": 8
-    },
-    {
-      "idMarca": 8,
-      "modelo": "RB-24",
-      "extraPorModelo": 33,
-      "id": 9
-    },
-    {
-      "idMarca": 9,
-      "modelo": "Qasqui",
-      "extraPorModelo": "",
-      "id": 10
     }
   ],
   "vehiculos": [
