@@ -18,35 +18,34 @@
   </template>
   <script>
   export default {
-    name: "FormularioNuevoModelo",
-    props: ["marcas"],
-    data() {
-      return {
-        nombre: "",
-        extraPorModelo: "",
-        nombreMarca: "",
-      };
+  name: "FormularioNuevoModelo",
+  props: ["marcas"],
+  data() {
+    return {
+      nombre: "",
+      extraPorModelo: null, 
+      nombreMarca: "",
+    };
+  },
+  methods: {
+    nuevoModelo() {
+      if (!this.extraPorModelo || isNaN(this.extraPorModelo)) {
+        this.extraPorModelo = 0;
+      }
+      
+      this.$emit("nuevoModelo", {
+        idMarca: this.nombreMarca,
+        modelo: this.nombre,
+        extraPorModelo: this.extraPorModelo,
+      });
+
+      this.nombre = "";
+      this.extraPorModelo = null; 
+      this.nombreMarca = "";
     },
-    methods: {
-      nuevoModelo() {
-        
-        if (!this.extraPorModelo.trim()) {
-          this.extraPorModelo = 0;
-        }
-    
-        this.$emit("nuevoModelo", {
-          idMarca: this.nombreMarca,
-          modelo: this.nombre,
-          extraPorModelo: this.extraPorModelo,
-        });
-        
-     
-        this.nombre = "";
-        this.extraPorModelo = "";
-        this.nombreMarca = "";
-      },
-    },
-  };
+  },
+};
+
 </script>
 
  <style scoped>

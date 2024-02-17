@@ -33,10 +33,34 @@
       "id": 2
     },
     {
-      "idMarca": 3,
-      "modelo": "MR-24",
-      "extraPorModelo": 0,
+      "idMarca": 2,
+      "modelo": "SF-23",
+      "extraPorModelo": 189,
       "id": 3
+    },
+    {
+      "idMarca": 1,
+      "modelo": "Q4",
+      "extraPorModelo": 187,
+      "id": 4
+    },
+    {
+      "idMarca": 3,
+      "modelo": "Recio",
+      "extraPorModelo": 0,
+      "id": 5
+    },
+    {
+      "idMarca": 1,
+      "modelo": "a",
+      "extraPorModelo": 23,
+      "id": 6
+    },
+    {
+      "idMarca": 3,
+      "modelo": "a",
+      "extraPorModelo": 0,
+      "id": 7
     }
   ],
   "vehiculos": [
