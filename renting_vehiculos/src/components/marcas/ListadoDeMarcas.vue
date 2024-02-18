@@ -2,18 +2,13 @@
   <div>
     <h1>Marcas</h1>
     <ul>
-      <li
-      v-for="coche in coches"
-      :key="coche.id"
-      @click="mostrarModelos(coche.id)">
-      {{ coche.nombre }} -- {{ coche.precioAlquiler }}
-      </li>
+        <li v-for="coche in coches" :key="coche.id"  @click="mostrarModelos(coche.id)">        
+          {{ coche.nombre }} <br><hr>Precio de Alquiler: {{ coche.precioAlquiler }}</li>
     </ul>
   </div>
-
-
 </template>
-<script>
+
+<script>  
 export default {
   props: {
     coches: Array,
@@ -42,19 +37,28 @@ ul {
 li {
   background-color: #f2f2f2;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-bottom: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  
 }
+
 
 li:hover {
-  background-color: #e0e0e0;
+  background-color: aliceblue; 
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 1); 
 }
 
+
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 30px; 
   text-align: center;
+  color: #343a40; 
+  font-size: 4rem;
+  font-weight: bold; 
+  text-transform: uppercase; 
 }
+
 </style>

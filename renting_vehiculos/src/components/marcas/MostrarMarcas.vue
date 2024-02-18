@@ -1,11 +1,11 @@
 <template lang="">
   <div>
     <div class="modelo-lista" v-if="modelosDeMarca.length">
-      <h2>Modelos de {{ marcaSeleccionada.nombre }}</h2>
+      <h2>Coches de {{ marcaSeleccionada.nombre }}</h2>
       <ul>
         <li v-for="modelo in modelosDeMarca" :key="modelo.id" class="modelo">
-          <p><strong>Modelo:</strong> {{ modelo.modelo }}</p>
-          <p><strong>Precio alquiler/día:</strong> {{ modelo.precioMedio }}</p>
+          <p>Modelo: {{ modelo.modelo }}</p>
+          <p>Precio alquiler X día: {{ modelo.precioMedio }}</p>
         </li>
       </ul>
     </div>
@@ -15,55 +15,43 @@
 <script>
 export default {
   props: {
-    marcaSeleccionada: Object,
+    marcaSeleccionada: Object, 
     modelosDeMarca: Array,
   }
 };
 </script>
 <style scoped>
-
-div{
+div {
   display: flex;
-  justify-content: center;
-
+  flex-direction: column;
+  align-items: center;
 }
 
-.tabla {
-  margin-top: 30px;
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 5px;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.tabla h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.tabla table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.tabla th,
-.tabla td {
-  text-align: left;
-  padding: 5px 10px;
-  border: 1px solid black;
-}
-
-.tabla th {
-  background-color: #ccc;
-}
-
-.tabla tr:nth-child(even) {
+li {
   background-color: #f2f2f2;
-}
-
-.tabla tr:hover {
-  background-color: #e6e6e6;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  
 }
 
+
+
+
+h1 {
+  margin-bottom: 30px; 
+  text-align: center;
+  color: #343a40; 
+  font-size: 4rem;
+  font-weight: bold; 
+  text-transform: uppercase; 
+}
 </style>

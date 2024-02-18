@@ -3,6 +3,7 @@ import Home from "../views/Home.vue"
 import NuevaMarca from "../views/NuevaMarca.vue";
 import NuevoModelo from "../views/NuevoModelo.vue";
 import Marcas from "../views/Marcas.vue";
+import Modelos from "../views/Modelos.vue";
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: "/marcas",
     name: "marcas",
     component: Marcas,
+}, 
+{
+  path: "/marcas/modelos",
+  name: "modelos",
+  component: Modelos,
 }
 ]
 

@@ -4,18 +4,18 @@
       "id": 1,
       "nombre": "Alfa Romeo",
       "origen": "Italia",
-      "añoDeFundacion": 1910
+      "anioFundacion": 1910
     },
     {
       "nombre": "Ferrari",
-      "pais": "Italia",
-      "añoFundacion": 1939,
+      "origen": "España",
+      "anioFundacion": 1916,
       "id": 2
     },
     {
-      "nombre": "Mercedes",
-      "pais": "Alemania",
-      "añoFundacion": 1916,
+      "nombre": "Raul",
+      "origen": "Venezuela",
+      "anioFundacion": 25,
       "id": 3
     }
   ],
@@ -27,40 +27,22 @@
       "extraPorModelo": 12
     },
     {
-      "idMarca": 2,
-      "modelo": "SF-24",
-      "extraPorModelo": 0,
+      "idMarca": "",
+      "modelo": "A",
+      "extraPorModelo": 1,
       "id": 2
     },
     {
+      "modelo": "SA",
       "idMarca": 2,
-      "modelo": "SF-23",
-      "extraPorModelo": 189,
+      "extraPorModelo": 3,
       "id": 3
     },
     {
-      "idMarca": 1,
-      "modelo": "Q4",
-      "extraPorModelo": 187,
-      "id": 4
-    },
-    {
       "idMarca": 3,
-      "modelo": "Recio",
-      "extraPorModelo": 0,
-      "id": 5
-    },
-    {
-      "idMarca": 1,
       "modelo": "a",
       "extraPorModelo": 23,
-      "id": 6
-    },
-    {
-      "idMarca": 3,
-      "modelo": "a",
-      "extraPorModelo": 0,
-      "id": 7
+      "id": 4
     }
   ],
   "vehiculos": [

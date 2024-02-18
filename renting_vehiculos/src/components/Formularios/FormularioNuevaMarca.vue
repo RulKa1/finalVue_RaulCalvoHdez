@@ -5,8 +5,8 @@
       <div>
         <label for="nombre">Nombre de la Marca</label>
         <input type="text" id="nombre" v-model="nombre" required />
-        <label for="añoFundacion">Año de Fundacion</label>
-        <input type="number" id="añoFundacion" v-model="añoFundacion"  required/>
+        <label for="anioFundacion">Año de Fundacion</label>
+        <input type="number" id="anioFundacion" v-model="anioFundacion"  required/>
         <label for="paisCreacion">Creado En </label>
         <input type="text" id="paisCreacion" v-model="paisCreacion" required/>
       </div>
@@ -23,16 +23,16 @@ export default {
   data() {
     return {
       nombre: "",
-      añoFundacion: "",
-      paisCreacion: "",
+      anioFundacion: "",
+      origen: "",
     };
   },
   methods: {
     nuevaMarca() {
       this.$emit("nuevaMarca", {
         nombre: this.nombre,
-        pais: this.paisCreacion,
-        añoFundacion: this.añoFundacion,
+        origen: this.paisCreacion,
+        anioFundacion: this.anioFundacion,
       });
       document.getElementById("miFormulario").reset();
 
