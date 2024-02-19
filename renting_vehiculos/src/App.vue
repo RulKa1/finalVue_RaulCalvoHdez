@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <li>
-          <router-link to="/">Home</router-link>
+          <router-link to="/">Inicio</router-link>
         </li>
         <li>
           <p>
@@ -11,13 +11,13 @@
           </p>
           <ul>
             <li>
-              <router-link to="/marcas/nuevaMarca">Nueva Marca</router-link>
+              <router-link to="/marcas/crearMarca">Nueva Marca</router-link>
             </li>
             <li>
               <router-link to="/marcas/modelos">Modelos</router-link>
             </li>
             <li>
-              <router-link to="/marcas/nuevoModelo">Nuevo Modelo</router-link>
+              <router-link to="/marcas/crearModelo">Nuevo Modelo</router-link>
             </li>
           </ul>
         </li>
@@ -27,10 +27,10 @@
           </p>
           <ul>
             <li>
-              <router-link to="/vehiculos/nuevoVehiculo">Nuevo Vehículo</router-link>
+              <router-link to="/vehiculos/crearvehiculo">Nuevo Vehículo</router-link>
             </li>
             <li>
-              <router-link to="/vehiculos/alquiler">Alquiler</router-link>
+              <router-link to="/alquiler">Alquiler</router-link>
             </li>
           </ul>
         </li>
@@ -39,71 +39,92 @@
         </li>
       </ul>
     </nav>
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
 <style scoped>
 #app {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 nav {
-  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #34495e; 
   width: 200px;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 20px 0; 
 }
 
 nav li {
-  margin: 10px ;
+  margin: 15px 0; 
+  width: 100%;
   text-align: center;
   position: relative;
 }
 
 nav li p {
+  display: inline-block;
   margin: 0;
-  padding: 10px;
+  padding: 15px; 
+  width: 100%;
   box-sizing: border-box;
   cursor: pointer;
+  transition: background-color 0.3s ease; 
+  color: #ecf0f1; 
+}
+
+nav li:hover p {
+  background-color: #16a085; 
 }
 
 nav li ul {
-  background-color: #333; 
   display: none;
   position: absolute;
   top: 0;
   left: 100%;
   width: 200px;
+  background-color: #2c3e50; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 nav li ul li {
+  width: 100%;
   text-align: center;
 }
 
 nav li:hover ul {
-  display: block;
+  display: block; 
 }
 
 nav a {
   text-decoration: none;
-  color: #ff0000; 
-  font-size: 18px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  color: #ecf0f1; 
+  font-size: 16px;
+  font-weight: normal;
+  transition: color 0.3s ease; 
 }
 
 nav a:hover {
-  color: #eee7e7;
+  color: #1abc9c; 
 }
+
 
 </style>

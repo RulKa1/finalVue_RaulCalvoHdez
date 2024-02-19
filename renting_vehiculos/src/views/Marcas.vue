@@ -1,18 +1,17 @@
 <template lang="">
   <div>
-    <ListadoDeMarcas :coches="coches" @mostrarModelos="mostrarModelos" />
+    <ListadoMarcas :coches="coches" @mostrarModelosDeMarca="mostrarModelosDeMarca"/>
     <MostrarMarcas :marcaSeleccionada="marcaSeleccionada" :modelosDeMarca="modelosDeMarca"/>
   </div>
 </template>
 <script>
-import ListadoDeMarcas from "../components/marcas/ListadoDeMarcas.vue";
+import ListadoMarcas from "../components/marcas/ListadoMarcas.vue";
 import MostrarMarcas from "../components/marcas/MostrarMarcas.vue";
-
 
 export default {
   name: "Marcas",
   components: {
-    ListadoDeMarcas,
+    ListadoMarcas,
     MostrarMarcas,
   },
   data() {
@@ -70,7 +69,7 @@ export default {
       return sumaPrecios;
     },
 
-    mostrarModelos(idMarca) {
+    mostrarModelosDeMarca(idMarca) {
       this.marcaSeleccionada = this.marcas.find((marca) => marca.id == idMarca);
       let modelosDeMarca = this.modelos.filter(
         (modelo) => modelo.idMarca == idMarca
@@ -82,7 +81,7 @@ export default {
         let precioMedio =
           vehiculosDeModelo.length > 0
             ? vehiculosDeModelo.reduce((a, b) => a + b.precioDia, 0) /
-              vehiculosDeModelo.length
+            vehiculosDeModelo.length
             : 0;
         return {
           id: modelo.id,
@@ -93,8 +92,8 @@ export default {
     },
   },
 
-  async created() {
-    await this.getDatos();
+  created() {
+    this.getDatos();
   },
 
   computed: {

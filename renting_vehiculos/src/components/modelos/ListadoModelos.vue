@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: "Desplegable",
+  name: "Listado",
   props: ["marcas"],
   data() {
     return {
@@ -25,19 +25,28 @@ export default {
 };
 </script>
 <style scoped>
+h1 {
+  margin-bottom: 30px; 
+  text-align: center;
+  color: #343a40; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+}
 div {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 300px;
+  margin: auto;
 }
 
 select {
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 1rem;
   border: none;
-  background-color: #f2f2f2;
+  background-color: #ebe1e1;
   border-radius: 0.25rem;
   margin: 0.5rem;
-  color: #333;
+  color: #030303;
 }
 </style>

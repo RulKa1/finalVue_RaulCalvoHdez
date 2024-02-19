@@ -1,17 +1,17 @@
 <template lang="">
   <div>
     <h1>Nueva Marca</h1>
-    <form id="miFormulario" action="" @submit.prevent="nuevaMarca">
+    <form action="" @submit.prevent="crearMarca">
       <div>
-        <label for="nombre">Nombre de la Marca</label>
-        <input type="text" id="nombre" v-model="nombre" required />
-        <label for="anioFundacion">Año de Fundacion</label>
-        <input type="number" id="anioFundacion" v-model="anioFundacion"  required/>
-        <label for="paisCreacion">Creado En </label>
-        <input type="text" id="paisCreacion" v-model="paisCreacion" required/>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" v-model="nombre" required/>
+        <label for="anoFundacion">Año de fundación:</label>
+        <input type="number" id="anoFundacion" v-model="anoFundacion" required />
+        <label for="paisOrigen">País de origen:</label>
+        <input type="text" id="paisOrigen" v-model="paisOrigen" required />
       </div>
       <div>
-        <button type="submit">Guardar Marca</button>
+        <button type="submit">Guardar</button>
       </div>
     </form>
   </div>
@@ -23,19 +23,17 @@ export default {
   data() {
     return {
       nombre: "",
-      anioFundacion: "",
-      origen: "",
+      anoFundacion: "",
+      paisOrigen: "",
     };
   },
   methods: {
-    nuevaMarca() {
-      this.$emit("nuevaMarca", {
+    crearMarca() {
+      this.$emit("crearMarca", {
         nombre: this.nombre,
-        origen: this.paisCreacion,
-        anioFundacion: this.anioFundacion,
+        origen: this.paisOrigen,
+        anioFundacion: this.anoFundacion,
       });
-      document.getElementById("miFormulario").reset();
-
     },
   },
 };
@@ -94,7 +92,7 @@ input {
 }
 
 button {
-  background-color: red; 
+  background-color: #34495e;; 
   color: #fff; 
   border: none; 
   padding: 14px 24px; 

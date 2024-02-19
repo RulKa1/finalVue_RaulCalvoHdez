@@ -1,54 +1,47 @@
 <template lang="">
-    <div>
-      <h1>Nuevo Modelo</h1>
-      <form action="" @submit.prevent="nuevoModelo">
-        <label for="marca">Elige Marca</label>
-        <select name="" id="select" v-model="nombreMarca" required>
-          <option v-for="marca in marcas" :value="marca.id">
+  <div>
+    <h1>Nuevo Modelo</h1>
+    <form action="" @submit.prevent="guardarModelo">
+      <label for="marca">Elige Marca</label >
+      <select name="" id="" v-model="marcaSelecionada" required>
+        <option v-for="marca in marcas" :value="marca.id">
           {{ marca.nombre }}
-          </option>
-        </select>
-        <label for="nombre">Nombre del modelo</label>
-        <input type="text" placeholder="Introduce el Nombre del Modelo " v-model="nombre"required />
-        <label for="extraPorModelo">Extra a pagar por el modelo</label>
-        <input type="number" placeholder="€" v-model="extraPorModelo"  step="0.01" />
-        <button type="submit">Guardar Modelo</button>
-      </form>
-    </div>
-  </template>
-  <script>
-  export default {
-  name: "FormularioNuevoModelo",
+        </option>
+      </select>
+      <label for="nombre">Nombre del modelo</label>
+      <input type="text" placeholder="Nombre del modelo" v-model="nombre" required/>
+      <label for="extra">Extra por modelo</label>
+      <input type="number" placeholder="Extra por Modelo" v-model="extra" />
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+</template>
+<script>
+export default {
+  name: "FormNewModelo",
   props: ["marcas"],
   data() {
     return {
       nombre: "",
-      extraPorModelo: null, 
-      nombreMarca: "",
+      extra: 0,
+      marcaSelecionada: "",
     };
   },
   methods: {
-    nuevoModelo() {
-      if (!this.extraPorModelo || isNaN(this.extraPorModelo)) {
-        this.extraPorModelo = 0;
-      }
-      
-      this.$emit("nuevoModelo", {
-        idMarca: this.nombreMarca,
+    guardarModelo() {
+      this.$emit("guardarModelo", {
+          idMarca: this.marcaSelecionada,
         modelo: this.nombre,
-        extraPorModelo: this.extraPorModelo,
+        extraPorModelo: this.extra,
       });
-
       this.nombre = "";
-      this.extraPorModelo = null; 
-      this.nombreMarca = "";
+      this.extra = 0;
+      this.marcaSelecionada = "";
     },
   },
 };
-
 </script>
-
- <style scoped>
+<style scoped>
 
 select{
   height: 35px;
@@ -105,15 +98,15 @@ input {
 }
 
 button {
-  background-color: red; 
+  background-color: #34495e; 
   color: #fff; 
   border: none; 
-  padding: 14px 24px; 
+  padding: 14px ; 
   text-align: center; 
   font-size: 1.1rem; 
   border-radius: 6px; 
   cursor: pointer;
-  transition: background-color 0.3s ease; 
+
   text-transform: uppercase; 
 
 

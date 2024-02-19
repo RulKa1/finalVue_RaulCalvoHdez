@@ -94,7 +94,7 @@ export default {
 </script>
 <style scoped>
 table {
-  margin: 0 auto;
+  margin: 20px auto;
   border-collapse: collapse;
   width: 100%;
   max-width: 800px;
@@ -103,45 +103,40 @@ table {
 
 th, td {
   padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dee2e6;
 }
 
 th {
-  background-color: #f2f2f2;
-  color: #444;
-  font-weight: bold;
+  background-color: #e9ecef;
+  color: #343a40;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
 }
 
 tr:hover {
-  background-color: #f5f5f5;
+  background-color: #f1f3f5;
 }
 
-input[type="number"] {
-  width: 80px;
-  padding: 8px 12px;
-  margin-right: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  text-align: center;
-}
+
 
 button {
-  background-color: #4CAF50;
+  background-color: #34495e;
   border: none;
   color: white;
-  padding: 8px 12px;
+  padding: 10px 15px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 5px;
   cursor: pointer;
   border-radius: 4px;
+
 }
 
 button:hover {
-  background-color: #3e8e41;
+  background-color: #34495e;
 }
+
 </style>

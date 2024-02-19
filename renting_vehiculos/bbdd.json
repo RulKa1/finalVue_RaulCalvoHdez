@@ -17,6 +17,12 @@
       "origen": "Venezuela",
       "anioFundacion": 25,
       "id": 3
+    },
+    {
+      "nombre": "Mercedes",
+      "origen": "Alemania",
+      "anioFundacion": 1916,
+      "id": 4
     }
   ],
   "modelos": [
@@ -43,6 +49,24 @@
       "modelo": "a",
       "extraPorModelo": 23,
       "id": 4
+    },
+    {
+      "modelo": "AMG-7",
+      "idMarca": 4,
+      "extraPorModelo": 3,
+      "id": 5
+    },
+    {
+      "idMarca": 4,
+      "modelo": "AMG-6",
+      "extraPorModelo": 1,
+      "id": 6
+    },
+    {
+      "modelo": "asas",
+      "idMarca": 4,
+      "extraPorModelo": 5,
+      "id": 7
     }
   ],
   "vehiculos": [
@@ -52,6 +76,27 @@
       "precioDia": 98,
       "puertas": 4,
       "sillaInfantil": false
+    },
+    {
+      "idModelo": 3,
+      "precioDia": 25,
+      "puertas": 5,
+      "sillaInfantil": true,
+      "id": 2
+    },
+    {
+      "idModelo": 5,
+      "precioDia": 187,
+      "puertas": 4,
+      "sillaInfantil": false,
+      "id": 3
+    },
+    {
+      "idModelo": 6,
+      "precioDia": 1,
+      "puertas": 3,
+      "sillaInfantil": true,
+      "id": 4
     }
   ],
   "clientes": [
@@ -64,8 +109,30 @@
           "vehiculo": 1,
           "numDias": 4,
           "fechaInic": "12/11/2022"
+        },
+        {
+          "vehiculo": 2,
+          "numDias": 4,
+          "fechaInic": "2024-02-21"
         }
       ]
+    },
+    {
+      "nombre": "Raúl Calvo Hernández",
+      "dni": "70957497J",
+      "alquileres": [
+        {
+          "vehiculo": 1,
+          "numDias": 1,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 3,
+          "numDias": 1,
+          "fechaInic": "2024-02-19"
+        }
+      ],
+      "id": 2
     }
   ]
 }
