@@ -4,22 +4,20 @@
       <thead>
         <tr>
           <th>Modelo</th>
-          <th>Precio/dia</th>
+          <th>Precio/día</th>
           <th>Precio extra por modelo</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="modelo in modeloCoche" :key="modelo.id">
           <td>{{ modelo.nombre }}</td>
-          <td>{{ modelo.precioAlquiler }}</td>
-          <td v-if="modelo.extraPorModelo > 0">
-            {{ modelo.extraPorModelo }}
-          </td>
-          <td v-else>
-            <input type="number" v-model.number="precioExtra" />
-            <button @click="actualizarPrecioExtra(modelo, precioExtra)">
-              Guardar
-            </button>
+          <td>{{ calcularPrecioAlquilerPromedio(modelo.id) }}</td>
+          <td>
+            {{ modelo.extraPorModelo || 0 }}
+            <div v-if="!modelo.extraPorModelo && !modeloActualizado[modelo.id]">
+              <input type="number" v-model.number="precioExtra" />
+              <button @click="() => actualizarPrecioExtra(modelo)">Guardar</button>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -34,28 +32,29 @@ export default {
   data() {
     return {
       precioExtra: 0,
+      modeloActualizado: {}, 
     };
   },
   methods: {
-    actualizarPrecioExtra(modelo, precioExtra) {
-      // Validación básica del input
-      if (isNaN(precioExtra) || precioExtra < 0) {
+    actualizarPrecioExtra(modelo) {
+      if (isNaN(this.precioExtra) || this.precioExtra < 0) {
         alert("Por favor, introduce un valor válido para el precio extra.");
         return;
       }
 
+      
       let init = {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          idMarca: modelo.idMarca, // Incluir idMarca
-          modelo: modelo.nombre, // Incluir el nombre del modelo
-          extraPorModelo: precioExtra, // Nuevo valor para extraPorModelo
+          idMarca: modelo.idMarca,
+          modelo: modelo.nombre,
+          extraPorModelo: this.precioExtra,
         }),
       };
-      
+
       fetch(`http://localhost:3000/modelos/${modelo.id}`, init)
         .then(response => {
           if (!response.ok) {
@@ -64,38 +63,37 @@ export default {
           return response.json();
         })
         .then(data => {
-          console.log("Precio extra actualizado con éxito", data);
-          alert("Precio extra actualizado con éxito.");
-          // Aquí podrías también actualizar el estado local o la UI si es necesario
+         
+          this.modeloActualizado[modelo.id] = true; 
+          modelo.extraPorModelo = this.precioExtra; 
+          this.precioExtra = 0; 
         })
         .catch(error => {
-          console.error("Error al actualizar el precio extra:", error);
-          alert("Error al actualizar el precio extra. Por favor, inténtalo de nuevo.");
+         
+          
         });
     },
-
-    marcaPrecioMedio(idModelo) {
-      let modelosMarca = this.modelos.filter((modelo) => modelo.id == idModelo);
-      let vehiculosModelo = this.vehiculos.filter((vehiculo) =>
-        modelosMarca.some((modelo) => modelo.id == vehiculo.idModelo)
-      );
-      let preciosAlquiler = vehiculosModelo.map((vehiculo) => vehiculo.precioDia);
-      let sumaPrecios = preciosAlquiler.reduce((a, b) => a + b, 0) / (preciosAlquiler.length || 1);
-      return sumaPrecios;
+    calcularPrecioAlquilerPromedio(idModelo) {
+      const vehiculosModelo = this.vehiculos.filter(vehiculo => vehiculo.idModelo === idModelo);
+      const sumaPrecios = vehiculosModelo.reduce((sum, vehiculo) => sum + vehiculo.precioDia, 0);
+      return sumaPrecios / (vehiculosModelo.length || 1);
     },
   },
   computed: {
     modeloCoche() {
-      return this.modelos.filter((modelo) => modelo.idMarca == this.marcaSeleccionada.id)
-        .map((modelo) => ({
+      return this.modelos.filter(modelo => modelo.idMarca === this.marcaSeleccionada.id)
+        .map(modelo => ({
           ...modelo,
-          nombre: modelo.modelo, // Corregido para mantener consistencia con el uso de 'nombre'
-          precioAlquiler: this.marcaPrecioMedio(modelo.id),
+          nombre: modelo.modelo,
+          precioAlquiler: this.calcularPrecioAlquilerPromedio(modelo.id),
+          extraPorModelo: modelo.extraPorModelo,
         }));
     },
   },
 };
 </script>
+
+
 <style scoped>
 table {
   margin: 20px auto;

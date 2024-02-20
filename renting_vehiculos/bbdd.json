@@ -35,6 +35,12 @@
       "origen": "España",
       "anioFundacion": 2002,
       "id": 7
+    },
+    {
+      "nombre": "PruebaDefinitva",
+      "origen": "España",
+      "anioFundacion": 2024,
+      "id": 8
     }
   ],
   "modelos": [
@@ -167,6 +173,78 @@
       "modelo": "sexti",
       "extraPorModelo": 2,
       "id": 22
+    },
+    {
+      "idMarca": 7,
+      "modelo": "Prueba10",
+      "extraPorModelo": 2,
+      "id": 23
+    },
+    {
+      "idMarca": 7,
+      "modelo": "11",
+      "extraPorModelo": 5,
+      "id": 24
+    },
+    {
+      "idMarca": 7,
+      "modelo": "Prueba 12",
+      "extraPorModelo": 1,
+      "id": 25
+    },
+    {
+      "idMarca": 7,
+      "modelo": "prueba13",
+      "extraPorModelo": 1,
+      "id": 26
+    },
+    {
+      "idMarca": 7,
+      "modelo": "13",
+      "extraPorModelo": 2,
+      "id": 27
+    },
+    {
+      "idMarca": 7,
+      "modelo": "Marca1",
+      "extraPorModelo": 55,
+      "id": 28
+    },
+    {
+      "idMarca": 7,
+      "modelo": "MARCA2",
+      "extraPorModelo": 1,
+      "id": 29
+    },
+    {
+      "idMarca": 7,
+      "modelo": "noveni",
+      "extraPorModelo": 2,
+      "id": 30
+    },
+    {
+      "idMarca": 8,
+      "modelo": "PD",
+      "extraPorModelo": 10,
+      "id": 31
+    },
+    {
+      "idMarca": 8,
+      "modelo": "PD2",
+      "extraPorModelo": 6,
+      "id": 32
+    },
+    {
+      "idMarca": 8,
+      "modelo": "PD3",
+      "extraPorModelo": 4,
+      "id": 33
+    },
+    {
+      "idMarca": 2,
+      "modelo": "SF25",
+      "extraPorModelo": 20,
+      "id": 34
     }
   ],
   "vehiculos": [
@@ -232,6 +310,48 @@
       "puertas": 3,
       "sillaInfantil": false,
       "id": 9
+    },
+    {
+      "idModelo": 24,
+      "precioDia": 1,
+      "puertas": 2,
+      "sillaInfantil": true,
+      "id": 10
+    },
+    {
+      "idModelo": 13,
+      "precioDia": 33,
+      "puertas": 0,
+      "sillaInfantil": true,
+      "id": 11
+    },
+    {
+      "idModelo": 11,
+      "precioDia": 3,
+      "puertas": 1,
+      "sillaInfantil": true,
+      "id": 12
+    },
+    {
+      "idModelo": 34,
+      "precioDia": 100,
+      "puertas": 5,
+      "sillaInfantil": true,
+      "id": 13
+    },
+    {
+      "idModelo": 6,
+      "precioDia": 100,
+      "puertas": 1,
+      "sillaInfantil": false,
+      "id": 14
+    },
+    {
+      "idModelo": 14,
+      "precioDia": 10,
+      "puertas": 10,
+      "sillaInfantil": true,
+      "id": 15
     }
   ],
   "clientes": [
@@ -285,6 +405,21 @@
           "vehiculo": 9,
           "numDias": 2,
           "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 11,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 13,
+          "numDias": 5,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 1,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
         }
       ],
       "id": 2
@@ -295,6 +430,26 @@
       "alquileres": [
         {
           "vehiculo": 4,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 10,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 1,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 11,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 1,
           "numDias": 2,
           "fechaInic": "2024-02-20"
         }

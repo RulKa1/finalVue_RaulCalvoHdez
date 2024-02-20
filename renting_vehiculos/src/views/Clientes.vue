@@ -155,7 +155,7 @@ export default {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    //eliminar cliente de la lista
+                   
                     this.clientes.splice(this.clientes.findIndex((cliente) => cliente.id == data.id), 1);
                     this.limpiarForm();
                 });
@@ -181,17 +181,15 @@ export default {
     padding: 20px;
 }
 
-.lista {
+.lista, .nuevo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-}
-
-.nuevo {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    width: 48%;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
 }
 
 .MostrarClientes {
@@ -202,32 +200,37 @@ export default {
 form {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    width: 80%;
 }
 
 input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 16px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     color: #fff;
-    background-color: #007bff;
+    background-color: #34495e;
     font-size: 16px;
     cursor: pointer;
-    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #34495e;
 }
 
 button:disabled {
-    opacity: 0.5;
+    opacity: 0.7;
     cursor: not-allowed;
 }
+
 </style>

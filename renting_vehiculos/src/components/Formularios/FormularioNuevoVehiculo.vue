@@ -36,7 +36,7 @@
 </template>
 <script>
 export default {
-  name: "FormNewVehiculo",
+  name: "FormularioNuevoVehiculo",
   props: {
     marcas: Array,
     modelos: Array,
@@ -54,12 +54,7 @@ export default {
   },
   methods: {
     anadirNewVehiculo() {
-      let modelos = null;
-      if (this.modeloSeleccionado) {
-        modelos = this.modeloSeleccionado;
-      } else {
-        modelos = this.nuevoModeloSeleccionado;
-      }
+      let modelos = this.modeloSeleccionado || this.nuevoModeloSeleccionado;
 
       let vehiculo = {
         idModelo: modelos.id,
@@ -75,23 +70,29 @@ export default {
         body: JSON.stringify(vehiculo),
       };
       fetch("http://localhost:3000/vehiculos", init)
-          .then((response) => response.json())
+        .then((response) => response.json())
+        .then(() => {
+          this.resetearFormulario(); 
+        });
+    },
+    resetearFormulario() {
+      this.nuevaMarcaSeleccionada = null;
+      this.nuevoModeloSeleccionado = null;
+      this.precioDia = 0;
+      this.puertas = 0;
+      this.sillaInfantil = false;
     },
   },
   computed: {
     nuevoModelosMarca() {
-      let modelos = [];
       if (this.nuevaMarcaSeleccionada) {
-        this.modelos.forEach((modelo) => {
-          if (modelo.idMarca == this.nuevaMarcaSeleccionada.id) {
-            modelos.push(modelo);
-          }
-        });
+        return this.modelos.filter(modelo => modelo.idMarca == this.nuevaMarcaSeleccionada.id);
       }
-      return modelos;
+      return [];
     },
   },
 };
+
 </script>
 <style scoped>
 div {

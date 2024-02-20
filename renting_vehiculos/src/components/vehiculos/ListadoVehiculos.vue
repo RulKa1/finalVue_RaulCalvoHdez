@@ -1,23 +1,12 @@
 <template lang="">
   <div>
-    <select
-      name="marcas"
-      id="marcas"
-      v-model="marcaSeleccionada"
-      @change="enviarMarca"
-    >
+    <select name="marcas" id="marcas" v-model="marcaSeleccionada" @change="enviarMarca">
       <option v-for="marca in marcas" :value="marca" :key="marca.id">
         {{ marca.nombre }}
        </option>
      </select>
 
-     <select
-       name="modelos"
-       id="modelos"
-       v-model="modeloSeleccionado"
-       :disabled="!marcaSeleccionada"
-       @change="enviarModelo"
-     >
+     <select name="modelos" id="modelos" v-model="modeloSeleccionado" :disabled="!marcaSeleccionada" @change="enviarModelo" >
        <option v-for="modelo in modelosDeMarca" :value="modelo" :key="modelo.id">
          {{ modelo.modelo }}
        </option>

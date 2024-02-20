@@ -148,19 +148,24 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #34495e;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
 }
-
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #ffffff;
 }
 
 .mostrarLista {
@@ -168,5 +173,14 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 20px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 </style>

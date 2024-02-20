@@ -10,11 +10,7 @@
       </thead>
 
       <tbody>
-        <tr
-          v-show="modeloSeleccionado && marcaSeleccionada"
-          v-for="vehiculo in vehiculoDeModelos"
-          :key="vehiculo.id"
-        >
+        <tr v-show="modeloSeleccionado && marcaSeleccionada" v-for="vehiculo in vehiculoDeModelos" :key="vehiculo.id">
           <td>
             {{ vehiculo.modelo }}
           </td>
@@ -27,11 +23,7 @@
           <td v-else>No alquilado</td>
         </tr>
 
-        <tr
-          v-show="marcaSeleccionada && !modeloSeleccionado"
-          v-for="vehiculo in vehiculoDeModelos"
-          :key="vehiculo.id"
-        >
+        <tr v-show="marcaSeleccionada && !modeloSeleccionado" v-for="vehiculo in vehiculoDeModelos":key="vehiculo.id">
           <td>
             {{ vehiculo.modelo }}
           </td>
@@ -44,11 +36,7 @@
           <td v-else>No alquilado</td>
         </tr>
 
-        <tr
-          v-show="!modeloSeleccionado && !marcaSeleccionada"
-          v-for="vehiculo in vehiculoDeModelos"
-          :key="vehiculo.id"
-        >
+        <tr v-show="!modeloSeleccionado && !marcaSeleccionada" v-for="vehiculo in vehiculoDeModelos" :key="vehiculo.id">
           <td>
             {{ vehiculo.modelo }}
           </td>

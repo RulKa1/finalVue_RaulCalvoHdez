@@ -13,11 +13,7 @@
     </select>
     <label for="cliente">Cliente:</label>
     <select v-model="clienteSeleccionado" @change="enviarCliente" required>
-      <option
-          v-for="cliente in clientes"
-          :key="cliente.id"
-          :value="cliente"
-      >
+      <option v-for="cliente in clientes" :key="cliente.id" :value="cliente">
         {{ cliente.nombre }}
       </option>
     </select>
@@ -31,7 +27,7 @@
 
 <script>
 export default {
-  name: "FormNewAlquiler",
+  name: "FormularioNuevoAlquiler",
   props: {
     marcaSeleccionada: Object,
     modeloSelecionado: Object,
@@ -47,46 +43,51 @@ export default {
       fecha: "",
     };
   },
-
   methods: {
-
     enviarVehiculo() {
       this.$emit("enviarVehiculo", this.vehiculoSeleccionado);
     },
-
     enviarCliente() {
       this.$emit("enviarCliente", this.clienteSeleccionado);
     },
-
     enviarNumDias() {
       this.$emit("enviarNumDias", this.numDias);
     },
-
-    alquilar(id) {
-
+    alquilar(cliente) {
       let alquiler = {
         vehiculo: this.vehiculoSeleccionado.id,
         numDias: this.numDias,
         fechaInic: this.fecha,
       };
 
-      fetch(`http://localhost:3000/clientes/` + id.id)
-          .then((response) => response.json())
-          .then((data) => {
-            data.alquileres.push(alquiler);
-            fetch(`http://localhost:3000/clientes/` + id.id, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(data),
-            })
-                .then((response) => response.json())
-          });
-      this.$emit("mostrarRegistro")
+      fetch(`http://localhost:3000/clientes/${cliente.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...cliente,
+          alquileres: [...cliente.alquileres, alquiler],
+        }),
+      })
+      .then((response) => response.json())
+      .then(() => {
+        this.resetearFormulario(); 
+        this.$emit("mostrarRegistro"); 
+      });
+    },
+    resetearFormulario() {
+      this.vehiculoSeleccionado = null;
+      this.clienteSeleccionado = null;
+      this.numDias = 1;
+      this.fecha = "";
     },
   },
+  created() {
+    this.$emit('getDatos'); 
+  },
 }
+
 </script>
 
 <style scoped>
