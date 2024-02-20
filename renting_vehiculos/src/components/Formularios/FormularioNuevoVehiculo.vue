@@ -1,5 +1,6 @@
 <template lang="">
   <div>
+    <h1>Nuevo vehiculo</h1>
     <form action="" @submit.prevent="anadirNewVehiculo">
       <div v-if="marcaSeleccionada">
         <input type="text" :value="marcaSeleccionada.nombre" disabled />
@@ -18,18 +19,14 @@
       <div v-if="!modeloSeleccionado">
       <label for="modelo">Elige el modelo</label>
         <select name="" id="" :disabled="!nuevaMarcaSeleccionada" v-model="nuevoModeloSeleccionado">
-          <option
-            v-for="modelo in nuevoModelosMarca"
-            :value="modelo"
-            :key="modelo.id"
-          >
+          <option v-for="modelo in nuevoModelosMarca" :value="modelo" :key="modelo.id">
             {{modelo.modelo }}
           </option>
         </select>
       </div>
       <label for="precio">Precio por dia</label>
       <input type="number" v-model="precioDia" />
-      <label for="puertas">Cuantas puertas quiere?</label>
+      <label for="puertas">¿Numero de  puertas quiere?</label>
       <input type="number" v-model="puertas" />
       <label for="silla">¿Necesita silla infantil?</label>
       <input type="checkbox" v-model="sillaInfantil" />
@@ -97,49 +94,46 @@ export default {
 };
 </script>
 <style scoped>
-div{
+div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 20px;
+  width: 80%;
+  max-width: 500px;
+}
 
+select, input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 16px;
+  width: 100%;
+  outline: none;
 }
 
 select {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.25rem;
-  box-shadow: 0 0 0 2px lightgray;
-  font-size: 1rem;
-  width: 100%;
-}
-
-input[type="number"],
-input[type="checkbox"] {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.25rem;
-  box-shadow: 0 0 0 2px lightgray;
-  font-size: 1rem;
+  border-color: #34495e;
+  box-shadow: 0 0 8px 34495e(30,144,255,0.5);
 }
 
 button {
-  padding: 0.5rem;
-  background-color: dodgerblue;
+  padding: 10px;
+  background-color: #34495e;
   color: white;
   border: none;
-  border-radius: 0.25rem;
-  font-size: 1rem;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+
 }
 
-button:hover {
-  background-color: deepskyblue;
-}
+
 </style>

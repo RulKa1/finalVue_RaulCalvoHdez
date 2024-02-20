@@ -3,7 +3,7 @@
     <h1>Nuevo Modelo</h1>
     <form action="" @submit.prevent="guardarModelo">
       <label for="marca">Elige Marca</label >
-      <select name="" id="" v-model="marcaSelecionada" required>
+      <select  name="" id="" v-model="marcaSelecionada" required>
         <option v-for="marca in marcas" :value="marca.id">
           {{ marca.nombre }}
         </option>
@@ -23,23 +23,28 @@ export default {
   data() {
     return {
       nombre: "",
-      extra: 0,
+      extra: "", 
       marcaSelecionada: "",
     };
   },
   methods: {
     guardarModelo() {
+      if (!this.extra) {
+        this.extra = 0;
+      }
+
       this.$emit("guardarModelo", {
-          idMarca: this.marcaSelecionada,
+        idMarca: this.marcaSelecionada,
         modelo: this.nombre,
         extraPorModelo: this.extra,
       });
       this.nombre = "";
-      this.extra = 0;
+      this.extra = "";
       this.marcaSelecionada = "";
     },
   },
 };
+
 </script>
 <style scoped>
 

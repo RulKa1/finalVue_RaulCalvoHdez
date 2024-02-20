@@ -15,9 +15,8 @@
       </div>
     </form>
   </div>
-
-
 </template>
+
 <script>
 export default {
   data() {
@@ -34,10 +33,17 @@ export default {
         origen: this.paisOrigen,
         anioFundacion: this.anoFundacion,
       });
+      this.resetForm(); 
+    },
+    resetForm() {
+      this.nombre = "";
+      this.anoFundacion = "";
+      this.paisOrigen = "";
     },
   },
 };
 </script>
+
 <style scoped>
 
 select:invalid {

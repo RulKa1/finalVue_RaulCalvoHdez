@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div>
     <table v-if="marcaSeleccionada">
       <thead>
@@ -12,17 +12,11 @@
         <tr v-for="modelo in modeloCoche" :key="modelo.id">
           <td>{{ modelo.nombre }}</td>
           <td>{{ modelo.precioAlquiler }}</td>
-          <td
-            v-if="
-              modelo.extraPorModelo > 0 &&
-              modelo.extraPorModelo != null &&
-              modelo.extraPorModelo != undefined
-            "
-          >
+          <td v-if="modelo.extraPorModelo > 0">
             {{ modelo.extraPorModelo }}
           </td>
           <td v-else>
-            <input type="number" v-model="precioExtra" />
+            <input type="number" v-model.number="precioExtra" />
             <button @click="actualizarPrecioExtra(modelo, precioExtra)">
               Guardar
             </button>
@@ -32,6 +26,7 @@
     </table>
   </div>
 </template>
+
 <script>
 export default {
   name: "TablasModelo",
@@ -43,21 +38,39 @@ export default {
   },
   methods: {
     actualizarPrecioExtra(modelo, precioExtra) {
+      // Validación básica del input
+      if (isNaN(precioExtra) || precioExtra < 0) {
+        alert("Por favor, introduce un valor válido para el precio extra.");
+        return;
+      }
+
       let init = {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          modelo: modelo.nombre,
-          idMarca: modelo.idMarca,
-          extraPorModelo: precioExtra,
+          idMarca: modelo.idMarca, // Incluir idMarca
+          modelo: modelo.nombre, // Incluir el nombre del modelo
+          extraPorModelo: precioExtra, // Nuevo valor para extraPorModelo
         }),
       };
+      
       fetch(`http://localhost:3000/modelos/${modelo.id}`, init)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Error al actualizar el precio extra");
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log("Precio extra actualizado con éxito", data);
+          alert("Precio extra actualizado con éxito.");
+          // Aquí podrías también actualizar el estado local o la UI si es necesario
+        })
+        .catch(error => {
+          console.error("Error al actualizar el precio extra:", error);
+          alert("Error al actualizar el precio extra. Por favor, inténtalo de nuevo.");
         });
     },
 
@@ -66,28 +79,19 @@ export default {
       let vehiculosModelo = this.vehiculos.filter((vehiculo) =>
         modelosMarca.some((modelo) => modelo.id == vehiculo.idModelo)
       );
-      let preciosAlquiler = vehiculosModelo.map(
-        (vehiculo) => vehiculo.precioDia
-      );
-      let sumaPrecios =
-        preciosAlquiler.reduce((a, b) => a + b, 0) / (preciosAlquiler.length || 1);
+      let preciosAlquiler = vehiculosModelo.map((vehiculo) => vehiculo.precioDia);
+      let sumaPrecios = preciosAlquiler.reduce((a, b) => a + b, 0) / (preciosAlquiler.length || 1);
       return sumaPrecios;
     },
   },
   computed: {
     modeloCoche() {
-      let marcasConPrecioMedio = this.modelos.map((modelo) => {
-        return {
-          id: modelo.id,
-          idMarca: modelo.idMarca,
-          nombre: modelo.modelo,
+      return this.modelos.filter((modelo) => modelo.idMarca == this.marcaSeleccionada.id)
+        .map((modelo) => ({
+          ...modelo,
+          nombre: modelo.modelo, // Corregido para mantener consistencia con el uso de 'nombre'
           precioAlquiler: this.marcaPrecioMedio(modelo.id),
-          extraPorModelo: modelo.extraPorModelo,
-        };
-      });
-      return marcasConPrecioMedio.filter(
-        (modelo) => modelo.idMarca == this.marcaSeleccionada.id
-      );
+        }));
     },
   },
 };
@@ -101,7 +105,8 @@ table {
   text-align: left;
 }
 
-th, td {
+th,
+td {
   padding: 12px 15px;
   border-bottom: 1px solid #dee2e6;
 }
@@ -138,5 +143,4 @@ button {
 button:hover {
   background-color: #34495e;
 }
-
 </style>

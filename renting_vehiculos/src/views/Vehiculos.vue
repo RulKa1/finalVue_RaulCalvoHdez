@@ -186,23 +186,25 @@ div {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding: 20px;
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #007bff;
   color: white;
-  border: none;
-  padding: 12px 20px;
+  border: 2px solid transparent;
+  padding: 15px 30px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.2rem;
-  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
   cursor: pointer;
-  margin: 40px 2px;
+  margin: 20px 2px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #0056b3;
+  border-color: #004094;
 }
 </style>

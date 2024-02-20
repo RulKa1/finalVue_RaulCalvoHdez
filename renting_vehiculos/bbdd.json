@@ -13,16 +13,28 @@
       "id": 2
     },
     {
-      "nombre": "Raul",
-      "origen": "Venezuela",
-      "anioFundacion": 25,
-      "id": 3
-    },
-    {
       "nombre": "Mercedes",
       "origen": "Alemania",
       "anioFundacion": 1916,
       "id": 4
+    },
+    {
+      "nombre": "Renault",
+      "origen": "Francia",
+      "anioFundacion": 1945,
+      "id": 5
+    },
+    {
+      "nombre": "SEAT",
+      "origen": "España",
+      "anioFundacion": 1111,
+      "id": 6
+    },
+    {
+      "nombre": "SergioMarca",
+      "origen": "España",
+      "anioFundacion": 2002,
+      "id": 7
     }
   ],
   "modelos": [
@@ -67,6 +79,94 @@
       "idMarca": 4,
       "extraPorModelo": 5,
       "id": 7
+    },
+    {
+      "modelo": "Clio",
+      "idMarca": 5,
+      "extraPorModelo": 25,
+      "id": 8
+    },
+    {
+      "idMarca": 5,
+      "modelo": "Megane",
+      "extraPorModelo": 50,
+      "id": 9
+    },
+    {
+      "idMarca": 6,
+      "modelo": "Ibiza",
+      "extraPorModelo": 23,
+      "id": 10
+    },
+    {
+      "modelo": "SergioRapido",
+      "idMarca": 7,
+      "extraPorModelo": 33,
+      "id": 11
+    },
+    {
+      "modelo": "SF-23",
+      "idMarca": 2,
+      "extraPorModelo": 4,
+      "id": 12
+    },
+    {
+      "modelo": "Leon",
+      "idMarca": 6,
+      "extraPorModelo": 5,
+      "id": 13
+    },
+    {
+      "idMarca": 1,
+      "modelo": "Bottas",
+      "extraPorModelo": 4,
+      "id": 14
+    },
+    {
+      "modelo": "AMG-Petronas",
+      "idMarca": 4,
+      "extraPorModelo": 2,
+      "id": 15
+    },
+    {
+      "modelo": "Probando",
+      "idMarca": 7,
+      "extraPorModelo": 4,
+      "id": 16
+    },
+    {
+      "modelo": "as",
+      "idMarca": 4,
+      "extraPorModelo": 2,
+      "id": 17
+    },
+    {
+      "id": 18,
+      "idMarca": 4,
+      "modelo": "AER",
+      "extraPorModelo": 2
+    },
+    {
+      "extraPorModelo": 33,
+      "id": 19
+    },
+    {
+      "idMarca": 7,
+      "modelo": "cuatri",
+      "extraPorModelo": 35,
+      "id": 20
+    },
+    {
+      "idMarca": 7,
+      "modelo": "cinqui",
+      "extraPorModelo": 37,
+      "id": 21
+    },
+    {
+      "idMarca": 7,
+      "modelo": "sexti",
+      "extraPorModelo": 2,
+      "id": 22
     }
   ],
   "vehiculos": [
@@ -97,6 +197,41 @@
       "puertas": 3,
       "sillaInfantil": true,
       "id": 4
+    },
+    {
+      "idModelo": 8,
+      "precioDia": 25,
+      "puertas": 5,
+      "sillaInfantil": true,
+      "id": 5
+    },
+    {
+      "idModelo": 9,
+      "precioDia": 50,
+      "puertas": 4,
+      "sillaInfantil": false,
+      "id": 6
+    },
+    {
+      "idModelo": 4,
+      "precioDia": 2,
+      "puertas": 5,
+      "sillaInfantil": false,
+      "id": 7
+    },
+    {
+      "idModelo": 4,
+      "precioDia": 3,
+      "puertas": 5,
+      "sillaInfantil": false,
+      "id": 8
+    },
+    {
+      "idModelo": 11,
+      "precioDia": 2,
+      "puertas": 3,
+      "sillaInfantil": false,
+      "id": 9
     }
   ],
   "clientes": [
@@ -130,9 +265,41 @@
           "vehiculo": 3,
           "numDias": 1,
           "fechaInic": "2024-02-19"
+        },
+        {
+          "vehiculo": 5,
+          "numDias": 4,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 6,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 6,
+          "numDias": 3,
+          "fechaInic": "2024-02-20"
+        },
+        {
+          "vehiculo": 9,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
         }
       ],
       "id": 2
+    },
+    {
+      "nombre": "Sergio",
+      "dni": "70957849L",
+      "alquileres": [
+        {
+          "vehiculo": 4,
+          "numDias": 2,
+          "fechaInic": "2024-02-20"
+        }
+      ],
+      "id": 3
     }
   ]
 }
