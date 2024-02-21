@@ -21,7 +21,7 @@
     <input type="number" v-model="numDias" required/>
     <label for="fecha">Fecha:</label>
     <input type="date" v-model="fecha" required/>
-    <button type="submit" @click="enviarNumDias">Alquilar</button>
+    <button type="submit"  @click="enviarNumDias">Alquilar</button>
   </form>
 </template>
 

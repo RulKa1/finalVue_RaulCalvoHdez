@@ -3,7 +3,7 @@
     <h1>Nuevo vehiculo</h1>
     <form action="" @submit.prevent="anadirNewVehiculo">
       <div v-if="marcaSeleccionada">
-        <input type="text" :value="marcaSeleccionada.nombre" disabled />
+        <input type="text" :value="marcaSeleccionada.nombre" disabled  />
       </div>
       <div v-if="modeloSeleccionado">
         <input type="text" :value="modeloSeleccionado.modelo" disabled />
@@ -11,7 +11,7 @@
       <div v-if="!marcaSeleccionada">
       <label for="marca">Elige la marca</label>
         <select name="" id="" v-model="nuevaMarcaSeleccionada">
-          <option v-for="marca in marcas" :value="marca" :key="marca.id">
+          <option v-for="marca in marcas" :value="marca" :key="marca.id" required>
           {{marca.nombre }}
           </option>
         </select>
@@ -19,17 +19,17 @@
       <div v-if="!modeloSeleccionado">
       <label for="modelo">Elige el modelo</label>
         <select name="" id="" :disabled="!nuevaMarcaSeleccionada" v-model="nuevoModeloSeleccionado">
-          <option v-for="modelo in nuevoModelosMarca" :value="modelo" :key="modelo.id">
+          <option v-for="modelo in nuevoModelosMarca" :value="modelo" :key="modelo.id" required>
             {{modelo.modelo }}
           </option>
         </select>
       </div>
       <label for="precio">Precio por dia</label>
-      <input type="number" v-model="precioDia" />
+      <input type="number" v-model="precioDia" required />
       <label for="puertas">¿Numero de  puertas quiere?</label>
-      <input type="number" v-model="puertas" />
+      <input type="number" v-model="puertas"  required/>
       <label for="silla">¿Necesita silla infantil?</label>
-      <input type="checkbox" v-model="sillaInfantil" />
+      <input type="checkbox" v-model="sillaInfantil"  />
       <button>Guardar</button>
     </form>
   </div>

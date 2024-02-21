@@ -1,4 +1,6 @@
 <template lang="">
+      <h1>Vehiculos</h1>
+
   <div>
     <select name="marcas" id="marcas" v-model="marcaSeleccionada" @change="enviarMarca">
       <option v-for="marca in marcas" :value="marca" :key="marca.id">
@@ -77,5 +79,12 @@ select:disabled {
 
 option {
   font-size: 1.2rem;
+}
+h1 {
+  margin-bottom: 30px; 
+  text-align: center;
+  color: #343a40; 
+  font-weight: bold; 
+  text-transform: uppercase; 
 }
 </style>
